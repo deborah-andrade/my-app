@@ -102,17 +102,7 @@ export function Component() {
         <div className="bg-background rounded-lg shadow-md p-4">
           <h2 className="text-lg font-bold mb-2">Filtros</h2>
           <div className="grid gap-4">
-            <div>
-              <label htmlFor="brand" className="block text-sm font-medium mb-1">
-                Marca
-              </label>
-              <Input
-                id="brand"
-                type="text"
-                value={filters.brand}
-                onChange={(e) => handleFilterChange("brand", e.target.value)}
-                placeholder="Pesquisar por marca" />
-            </div>
+
             <div>
               <label htmlFor="model" className="block text-sm font-medium mb-1">
                 Modelo
@@ -146,28 +136,6 @@ export function Component() {
                 onChange={(e) => handleFilterChange("maxPrice", Number(e.target.value))}
                 placeholder="Preço máximo" />
             </div>
-            <div>
-              <label htmlFor="minYear" className="block text-sm font-medium mb-1">
-                Ano Mínimo
-              </label>
-              <Input
-                id="minYear"
-                type="number"
-                value={filters.minYear}
-                onChange={(e) => handleFilterChange("minYear", Number(e.target.value))}
-                placeholder="Ano mínimo" />
-            </div>
-            <div>
-              <label htmlFor="maxYear" className="block text-sm font-medium mb-1">
-                Ano Máximo
-              </label>
-              <Input
-                id="maxYear"
-                type="number"
-                value={filters.maxYear}
-                onChange={(e) => handleFilterChange("maxYear", Number(e.target.value))}
-                placeholder="Ano máximo" />
-            </div>
           </div>
         </div>
 
@@ -187,14 +155,7 @@ export function Component() {
                 <h3 className="text-lg font-bold mb-2">
                   {car.brand} {car.model}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-2">{car.year}</p>
                 <p className="text-xl font-bold mb-4">R$ {car.price.toLocaleString()}</p>
-                <Link
-                  href="#"
-                  className="bg-primary text-primary-foreground rounded-md py-2 px-4 inline-block"
-                  prefetch={false}>
-                  Ver Detalhes
-                </Link>
               </div>
             </div>
           ))}
